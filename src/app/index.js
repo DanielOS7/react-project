@@ -8,18 +8,20 @@ class App extends React.Component {
     render() {
         var user = {
             name: "Anna",
-            Hobbies: ["Sports"]
+            Hobbies: ["Sports", "Reading", "Fishing"]
         }
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header/>
+                        <Header />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Max"} age={27} user={user} />
+                        <Home name={"Max"} age={27} user={user}>
+                            <p>This is a paragraph!</p>
+                        </Home>
                     </div>
                 </div>
             </div>
