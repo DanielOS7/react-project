@@ -7,7 +7,7 @@ export class Home extends React.Component {
         super();
         this.state = {
             age: props.initialAge,
-            homeLink: "Changed Link",
+            homeLink: props.initialLinkName,
             status: 0
         };
     }
@@ -23,6 +23,12 @@ export class Home extends React.Component {
         this.props.changeLink(this.state.homeLink);
     }
 
+    onHandleChange(event) {
+        this.setState({
+            homeLink: event.target.value
+        });
+    }
+
     render() {
         return (
             <div>
@@ -34,6 +40,8 @@ export class Home extends React.Component {
                 <hr />
                 <button className="btn btn-primary" onClick={this.props.greet}>Greet</button>
                 <hr />
+                <input type="text" value={this.state.homeLink} 
+                onChange={(event) => this.onHandleChange(event)}/>
                 <button className="btn btn-primary" onClick={() => this.onChangeLink()}>Change Header Link</button>
             </div>
         );
@@ -45,5 +53,6 @@ export class Home extends React.Component {
 Home.propTypes = {
     name: PropTypes.string,
     initialAge: PropTypes.number,
-    greet: PropTypes.func
+    greet: PropTypes.func,
+    initialLinkName: PropTypes.string
 }
