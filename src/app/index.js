@@ -1,19 +1,20 @@
 import React from "react";
 import { render } from "react-dom";
-import {Router, Route, browserHistory} from "react-router";
+import { BrowserRouter, Route } from "react-router-dom";
 
 
-import {Root} from "./components/Root";
+import { Root } from "./components/Root";
 import { Home } from "./components/Home";
 import { User } from "./components/User";
 
 class App extends React.Component {
     render() {
         return (
-            <Router history={browserHistory}>
-                <Route path={"user"} compoent={User}/>
-                <Route path={"home"} compoent={Home}/>
-            </Router>
+            <BrowserRouter>
+                    <Route path={"/"} component={Root} />
+                    <Route path={"/home"} component={Home} />
+                    <Route path={"/user"} component={User} />
+            </BrowserRouter>
         );
     }
 }
