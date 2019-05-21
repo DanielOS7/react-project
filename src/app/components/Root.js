@@ -11,11 +11,11 @@ export class Root extends React.Component {
                         <Header></Header>
                     </div>
                 </div>
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
                         {this.props.children}
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }

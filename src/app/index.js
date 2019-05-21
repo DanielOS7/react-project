@@ -12,6 +12,7 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                     <Route path={"/"} component={Root} />
+                    <Route exact path={"/"} component={Home} />
                     <Route path={"/home"} component={Home} />
                     <Route path={"/user"} component={User} />
             </BrowserRouter>
